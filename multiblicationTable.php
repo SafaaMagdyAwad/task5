@@ -27,7 +27,13 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         </thead>
         <tbody>
 <?php 
-$number=$_POST['number'];
+if((int)($_POST['number'])==0){  // to prevent string values (int)String=0  
+  echo "enter valid number";
+  $number=0;
+}else{
+
+  $number=$_POST['number'];
+}
 for($i=1;$i<=10;$i++){
 ?>
           <tr>
